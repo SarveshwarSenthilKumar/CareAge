@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, session, jsonify
 from flask_session import Session 
 from datetime import datetime
 import pytz
-from sql import *
+from careage.sql import *
 
 app = Flask(__name__)
 
@@ -80,7 +80,28 @@ def checkUserPassword(username, password):
 
 @app.route("/")
 def index():
-    return "Home Page of CareAge"
+    return render_template("index.html")
+
+@app.route("/index")
+def index2():
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/request")
+def request():
+    return render_template("request.html")
+
+@app.route("/services")
+def services():
+    return render_template("services.html")
+
+@app.route("/volunteer")
+def volunteer():
+    return render_template("volunteer.html")
+
 #if not verified, do not let them onto the site and apply for gigs
 #Ask group how to make sure the address is not disclosed but available
 
@@ -159,7 +180,7 @@ def createposts():
     if request.method == "GET":
        db = SQL("sqlite:///users.db")
        address=db.execute("SELECT * FROM users WHERE name = :name", name=session.get("name"))[0]["address"]
-       return render_template("createposts.html", address=address)
+       return render_template("request.html", address=address)
     else:
         creator=session.get("name")
         roleTitle=request.form.get("role").strip()

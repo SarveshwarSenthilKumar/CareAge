@@ -1,63 +1,88 @@
-<DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.8">
-      <meta http-equiv="X-UA-Compatible" content="ie-edge">
-      <link href="style.css" rel="stylesheet" type="text/css" />
-      
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-      <title>CareAge</title>
-    </head>
-    <body style="background-color: #18191a;">
-        <div style="width: 100%; height: 55%;"><b style="width: 40%; height: 100%; margin-right: 9%; float:right; font-size: 2.5vw; color: white;">
-            <div style="color: white; font-size: 4vw; text-align: center; margin-bottom: 4%; margin-top: 7%;">Welcome to <br><b style="color: #316cb8;">CareAge</b> </div></b></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elderly-Youth Connect - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Elderly-Youth Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="request.html">Request Help</a></li>
+                    <li class="nav-item"><a class="nav-link" href="volunteer.html">Volunteer</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="signup.html">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-            
-            <form  action="/signup" method="POST">  
-                <div class="form-group">
-  
-                <br>
-                {% if error %}
-                <error style="color: #FF474C; font-size: 2.5vw; margin-left: 4%; margin-right: 3%; font-weight: 650;">Error: {{error}}</error>
-                {% endif %}
-                <br>
-                <input required placeholder="Full Name (Ex: Sarveshwar Senthil Kumar)" type="text" name="name" id="name" class="form-control" style="height: 10%;  color: black; font-size: 2.5vw;  margin-left: 3%; margin-right: 3%; width: 94%;">
-                <input required placeholder="Email Address (Ex: Sarveshwar313@gmail.com)" type="text" name="emailaddress" id="emailaddress" class="form-control" style="height: 10%;  color: black; font-size: 2.5vw;  margin-left: 3%; margin-right: 3%; width: 94%;">
-                
-                <div style="width: 100%; height: 10%; display: block; overflow: hidden;">
-                    <input required placeholder="Username" type="text" name="username" id="username" class="form-control" style="height: 100%;  color: black; font-size: 2.5vw;  margin-left: 3%;  width: 47%; float: left;">
-                    <input required placeholder="Password" type="password"  name="password" id="password" class="form-control" style="height:100%;  color: black; font-size: 2.5vw; width: 47%; float: right; margin-right: 3%;">
+    <main class="container my-5">
+        <h1 class="mb-4">Sign Up</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="role" class="form-label">Role</label>
+                                <select class="form-select" id="role" name="role" required>
+                                    <option value="">Select your role</option>
+                                    <option value="caregiver">Caregiver (Youth)</option>
+                                    <option value="elder">Elder</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </form>
+                    </div>
                 </div>
-                <div style="width: 100%; height: 10%; display: block; overflow: hidden;">
-                    <select multiple required id="role" name="role" class="form-control" style="height: 100%; font-size: 2vw; margin-left: 3%; width: 94%; margin-bottom:2%; float:left;">
-                        <option disabled focused>Choose a Role</option>
-                        <option value="caregiver">Caregiver</option>
-                        <option value="old">Old</option>
-                
-                    </select>
-              
-                </div>
-                <input required placeholder="Address" type="text" name="address" id="address" class="form-control" style="height: 10%;  color: black; font-size: 2.5vw;  margin-left: 3%; margin-right: 3%; width: 94%;">
-                <input required placeholder="Phone Number" type="text" name="phoneNumber" id="phoneNumber" class="form-control" style="height: 10%;  color: black; font-size: 2.5vw;  margin-left: 3%; margin-right: 3%; width: 94%;">
-                
-  
-                <div class="form-group">
-                
-                  <br>
-                  <button type="submit" class="btn btn-primary form-control" style="height: 10%; width: 94%; margin-left: 3%; margin-right: 3%;">Sign Up</button>
-  
-                </div>
-              </form>
+                <p class="mt-3 text-center">Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+    </main>
 
-              <form  action="/login" method="GET" style="margin-top: 4%;">  
-                <div class="form-group">
-  
-                  <button type="submit" class="btn btn-danger form-control" style="height:10%; margin-left: 3%; margin-right: 3%; width: 94%;">Return to Log In</button>
-  
-                </div>
-              </form>
-           
-    </body>
-    </html>
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2023 Elderly-Youth Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -19,8 +19,8 @@ The way to run this program can be broken down in five steps. This project was o
 </ul>
 <h2>Technologies Used:</h2>
 <ul>
-  <li>Backend: Python (Flask)</li>
-  <li>Frontend: TypeScript/React, can be found at https://github.com/SarveshwarSenthilKumar/CareAge</li>
+  <li>Backend: Python (Flask), can be found at https://github.com/SarveshwarSenthilKumar/NewCareAge</li>
+  <li>Frontend: TypeScript/React</li>
   <li>Databases: SQLite3, can easily be migrated into MySQL</li>
   <li>Docker used for hosting</li>
 </ul>
